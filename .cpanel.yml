@@ -3,4 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/hwqnl2tm2k32/public_html/rewaaz.in
     - /bin/cp * $DEPLOYPATH
-    - /bin/cp -R $DEPLOYPATH
+    - /bin/cp -R dashboard $DEPLOYPATH

@@ -7,6 +7,8 @@
 // $password = "brandonly!@#";
 // $databasename = "egxcmgbg_ecomrce_website";
 
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
