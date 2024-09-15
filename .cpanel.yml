@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/hwqnl2tm2k32/public_html/
+    - export DEPLOYPATH=/home/hwqnl2tm2k32/public_html/rewaaz.in
     - /bin/cp * $DEPLOYPATH
     
