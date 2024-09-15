@@ -30,7 +30,7 @@ error_reporting(0);
 <div class="sidebar-category">
 
     <div class="sidebar-top">
-        <h2 class="sidebar-title">BRANDS</h2>
+        <h2 class="sidebar-title">BRAND</h2>
 
 
 
