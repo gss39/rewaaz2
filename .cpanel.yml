@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/example/public_html/rewaaz.in
+    - /bin/cp * $DEPLOYPATH
+    
