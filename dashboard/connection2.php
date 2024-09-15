@@ -2,10 +2,10 @@
 
 
 
-// $servername = "localhost";
-// $username = "egxcmgbg_brandonly";
-// $password = "brandonly!@#";
-// $databasename = "egxcmgbg_ecomrce_website";
+$servername = "localhost";
+$username = "rewaaz123";
+$password = ",zb_E4~yMz)k";
+$databasename = "mydatabase";
 
 
 
