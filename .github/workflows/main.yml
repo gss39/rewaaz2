@@ -14,6 +14,6 @@ jobs:
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: ftp.rewaaz.in
+        server: ftp.75y.2ec.mytemp.website
         username: gss39@rewaaz.in
         password: (9PToU#J5tC
