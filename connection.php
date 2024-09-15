@@ -1,16 +1,16 @@
 <?php
 
-// $servername = "localhost";
-// $username = "egxcmgbg_brandonly";
-// $password = "brandonly!@#";
-// $databasename = "egxcmgbg_ecomrce_website";
-
-
-
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "myuser";
+$password = "REWAAZuser@#$";
 $databasename = "mydatabase";
+
+
+
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $databasename = "mydatabase";
 
 // CREATE CONNECTION 
 $conn = new mysqli(
