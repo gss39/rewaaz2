@@ -1,7 +1,7 @@
 on: 
   push:
     branches:
-      - main
+       - main
 name: Deploy website on push
 jobs:
   web-deploy:
@@ -14,6 +14,6 @@ jobs:
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: ftp.75y.2ec.mytemp.website
+        server: ftp.rewaaz.in
         username: gss39@rewaaz.in
         password: (9PToU#J5tC
