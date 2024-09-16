@@ -13,6 +13,8 @@
 
 
 <!-- ------------------------------------------------------------------------------- -->
+<meta name="google-adsense-account" content="ca-pub-1512397286671544">
+
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ER78CM3Q1Z"></script>
