@@ -5,10 +5,7 @@ $username = "rewaaz123";
 $password = ",zb_E4~yMz)k";
 $databasename = "mydatabase";
 
-// $servername = "localhost";
-// $username = "root";
-// $password = "";
-// $databasename = "mydatabase";
+
 
 
 
