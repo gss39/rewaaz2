@@ -9,10 +9,10 @@ $databasename = "mydatabase";
 
 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$databasename = "mydatabase";
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $databasename = "mydatabase";
 
 // CREATE CONNECTION 
 $conn = new mysqli(

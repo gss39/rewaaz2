@@ -12,22 +12,22 @@
   <title>Anon - eCommerce Website</title>
 
 
-<!-- ------------------------------------------------------------------------------- -->
-<meta name="google-adsense-account" content="ca-pub-1512397286671544">
+  <!-- ------------------------------------------------------------------------------- -->
+  <meta name="google-adsense-account" content="ca-pub-1512397286671544">
 
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ER78CM3Q1Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ER78CM3Q1Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-ER78CM3Q1Z');
-</script>
+    gtag('config', 'G-ER78CM3Q1Z');
+  </script>
 
 
-<!-- ---------------------------------------------------------------------------------- -->
+  <!-- ---------------------------------------------------------------------------------- -->
 
 
   <!--
@@ -40,7 +40,7 @@
   -->
   <link rel="stylesheet" href="./assets/css/style-prefix.css">
   <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}"> -->
-  
+
 
   <!--
     - google font link
@@ -49,8 +49,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-    
-   
+
+
 </head>
 
 <body>
@@ -62,11 +62,11 @@
     - MODAL
   -->
 
-  <div class="modal" data-modal>
+  <div class="modal" style=" display: none; " data-modal>
 
     <div class="modal-close-overlay" data-modal-overlay></div>
 
-    <div class="modal-content">
+    <div style=" display: none; " class="modal-content">
 
       <button class="modal-close-btn" data-modal-close>
         <ion-icon name="close-outline"></ion-icon>
@@ -110,7 +110,7 @@
     - NOTIFICATION TOAST
   -->
 
-  <div class="notification-toast" data-toast>
+  <div class="notification-toast" style=" display: none; " data-toast>
 
     <button class="toast-close-btn" data-toast-close>
       <ion-icon name="close-outline"></ion-icon>
@@ -160,14 +160,15 @@
 
         <div class="header-search-container">
 
-        <form action="index.php" method="post" >
-        
-          <input type="text" name="search_item"  id="search_query" class="search-field" placeholder="Enter your product name...">
+          <form action="index.php" method="post">
 
-          <button type=" submit " class="search-btn">
-            <ion-icon name="search-outline"></ion-icon>
-          </button>
-         
+            <input type="text" name="search_item" id="search_query" class="search-field"
+              placeholder="Enter your product name...">
+
+            <button type=" submit " class="search-btn">
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+
           </form>
         </div>
 
@@ -175,7 +176,7 @@
 
           <button class="action-btn">
             <a href="./login/login.php"><ion-icon style=" color: black; " name="person-outline"></ion-icon></a>
-            
+
           </button>
 
           <button class="action-btn">
@@ -357,7 +358,7 @@
           <li class="menu-category">
             <a href="#" class="menu-title">Kurta Sets</a>
 
-         
+
           </li>
 
 
@@ -365,23 +366,23 @@
           <li class="menu-category">
             <a href="#" class="menu-title">Sarees</a>
 
-            
-           
+
+
           </li>
 
           <li class="menu-category">
             <a href="#" class="menu-title"> Dress</a>
 
-         
+
 
           </li>
 
-         
+
 
           <li class="menu-category">
             <a href="#" class="menu-title">Gowns</a>
 
-       
+
           </li>
 
 
@@ -397,7 +398,7 @@
           <li class="menu-category">
             <a href="#" class="menu-title">Anarkali Salwar Suit</a>
 
-           
+
           </li>
 
         </ul>
@@ -414,10 +415,12 @@
 
 
 
-      <button class="action-btn">
+      
+      <a href="index.php"><button class="action-btn">
         <ion-icon name="home-outline"></ion-icon>
+        
       </button>
-
+    </a>
       <button class="action-btn">
 
         <a style=" color: black; " href="wishlist.php"><ion-icon name="heart-outline"></ion-icon></a>
@@ -451,31 +454,14 @@
         <li class="menu-category">
 
           <button class="accordion-menu" data-accordion-btn>
-            <p class="menu-title">Men's</p>
+            <p class="menu-title">Kurta Sets</p>
 
-            <div>
-              <ion-icon name="add-outline" class="add-icon"></ion-icon>
-              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-            </div>
+
           </button>
 
           <ul class="submenu-category-list" data-accordion>
 
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Shirt</a>
-            </li>
 
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Shorts & Jeans</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Safety Shoes</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Wallet</a>
-            </li>
 
           </ul>
 
@@ -484,99 +470,60 @@
         <li class="menu-category">
 
           <button class="accordion-menu" data-accordion-btn>
-            <p class="menu-title">Women's</p>
+            <p class="menu-title">Saares</p>
 
-            <div>
-              <ion-icon name="add-outline" class="add-icon"></ion-icon>
-              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-            </div>
+
           </button>
 
-          <ul class="submenu-category-list" data-accordion>
 
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Dress & Frock</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Earrings</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Necklace</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Makeup Kit</a>
-            </li>
-
-          </ul>
 
         </li>
 
         <li class="menu-category">
 
           <button class="accordion-menu" data-accordion-btn>
-            <p class="menu-title">Jewelry</p>
+            <p class="menu-title">Dress</p>
 
-            <div>
-              <ion-icon name="add-outline" class="add-icon"></ion-icon>
-              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-            </div>
+
           </button>
 
-          <ul class="submenu-category-list" data-accordion>
 
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Earrings</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Couple Rings</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Necklace</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Bracelets</a>
-            </li>
-
-          </ul>
 
         </li>
 
         <li class="menu-category">
 
           <button class="accordion-menu" data-accordion-btn>
-            <p class="menu-title">Perfume</p>
+            <p class="menu-title">Lahnga</p>
 
-            <div>
-              <ion-icon name="add-outline" class="add-icon"></ion-icon>
-              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-            </div>
+
           </button>
 
-          <ul class="submenu-category-list" data-accordion>
 
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Clothes Perfume</a>
-            </li>
 
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Deodorant</a>
-            </li>
+        </li>
 
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Flower Fragrance</a>
-            </li>
+        <li class="menu-category">
 
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Air Freshener</a>
-            </li>
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Co-Ord Sets</p>
 
-          </ul>
+
+          </button>
+
+
+
+        </li>
+
+        <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Anarkali Suit</p>
+
+
+          </button>
+
+
 
         </li>
 
@@ -590,84 +537,7 @@
 
       </ul>
 
-      <div class="menu-bottom">
 
-        <ul class="menu-category-list">
-
-          <li class="menu-category">
-
-            <button class="accordion-menu" data-accordion-btn>
-              <p class="menu-title">Language</p>
-
-              <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
-            </button>
-
-            <ul class="submenu-category-list" data-accordion>
-
-              <li class="submenu-category">
-                <a href="#" class="submenu-title">English</a>
-              </li>
-
-              <li class="submenu-category">
-                <a href="#" class="submenu-title">Espa&ntilde;ol</a>
-              </li>
-
-              <li class="submenu-category">
-                <a href="#" class="submenu-title">Fren&ccedil;h</a>
-              </li>
-
-            </ul>
-
-          </li>
-
-          <li class="menu-category">
-            <button class="accordion-menu" data-accordion-btn>
-              <p class="menu-title">Currency</p>
-              <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
-            </button>
-
-            <ul class="submenu-category-list" data-accordion>
-              <li class="submenu-category">
-                <a href="#" class="submenu-title">USD &dollar;</a>
-              </li>
-
-              <li class="submenu-category">
-                <a href="#" class="submenu-title">EUR &euro;</a>
-              </li>
-            </ul>
-          </li>
-
-        </ul>
-
-        <ul class="menu-social-container">
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
 
     </nav>
 
