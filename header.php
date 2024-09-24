@@ -201,16 +201,14 @@
 
         <ul class="desktop-menu-category-list">
 
+
+
           <li class="menu-category">
-            <a href="#" class="menu-title">Home</a>
+            <a href="index.php" class="menu-title">Home</a>
           </li>
 
 
 
-          <li class="menu-category">
-            <a href="#" class="menu-title">Categories</a>
-
-          </li>
           <!-- <a href="#" class="menu-title">Categories</a>
 
   <div class="dropdown-panel">
@@ -356,7 +354,7 @@
           </li>
 
           <li class="menu-category">
-            <a href="#" class="menu-title">Kurta Sets</a>
+            <a href='catg_page.php?catg=Kurta sets' class="menu-title">Kurta Sets</a>
 
 
           </li>
@@ -364,14 +362,14 @@
 
 
           <li class="menu-category">
-            <a href="#" class="menu-title">Sarees</a>
+            <a href="catg_page.php?catg=Saree" class="menu-title">Sarees</a>
 
 
 
           </li>
 
           <li class="menu-category">
-            <a href="#" class="menu-title"> Dress</a>
+            <a href="catg_page.php?catg=Dress" class="menu-title"> Dress</a>
 
 
 
@@ -379,26 +377,30 @@
 
 
 
+
+
+
+
           <li class="menu-category">
-            <a href="#" class="menu-title">Gowns</a>
-
-
+            <a href="catg_page.php?catg=Lahnga" class="menu-title">Lahnga</a>
           </li>
 
 
 
           <li class="menu-category">
-            <a href="#" class="menu-title">Lahnga</a>
+            <a href="catg_page.php?catg=Anarkali Salwar Suit" class="menu-title">Anarkali Salwar Suit</a>
+
+
           </li>
 
           <li class="menu-category">
-            <a href="#" class="menu-title">Palazzo</a>
+            <a href="catg_page.php?catg=Co-Ord-sets" class="menu-title">Co-Ord-sets</a>
           </li>
 
+
+
           <li class="menu-category">
-            <a href="#" class="menu-title">Anarkali Salwar Suit</a>
-
-
+            <a href="#" class="menu-title">Hot Offers</a>
           </li>
 
         </ul>
@@ -415,12 +417,12 @@
 
 
 
-      
+
       <a href="index.php"><button class="action-btn">
-        <ion-icon name="home-outline"></ion-icon>
-        
-      </button>
-    </a>
+          <ion-icon name="home-outline"></ion-icon>
+
+        </button>
+      </a>
       <button class="action-btn">
 
         <a style=" color: black; " href="wishlist.php"><ion-icon name="heart-outline"></ion-icon></a>
@@ -454,7 +456,10 @@
         <li class="menu-category">
 
           <button class="accordion-menu" data-accordion-btn>
-            <p class="menu-title">Kurta Sets</p>
+            <a href="catg_page.php?catg=Kurta sets">
+              <p class="menu-title">Kurta Sets</p>
+            </a>
+
 
 
           </button>
@@ -470,7 +475,11 @@
         <li class="menu-category">
 
           <button class="accordion-menu" data-accordion-btn>
-            <p class="menu-title">Saares</p>
+
+
+            <a href="catg_page.php?catg=Saree">
+              <p class="menu-title">Saares</p>
+            </a>
 
 
           </button>
@@ -482,7 +491,10 @@
         <li class="menu-category">
 
           <button class="accordion-menu" data-accordion-btn>
-            <p class="menu-title">Dress</p>
+
+            <a href="catg_page.php?catg=Dress">
+              <p class="menu-title">Dress</p>
+            </a>
 
 
           </button>
@@ -494,7 +506,10 @@
         <li class="menu-category">
 
           <button class="accordion-menu" data-accordion-btn>
-            <p class="menu-title">Lahnga</p>
+
+            <a href="catg_page.php?catg=Lahnga">
+              <p class="menu-title">Lahnga</p>
+            </a>
 
 
           </button>
@@ -506,7 +521,11 @@
         <li class="menu-category">
 
           <button class="accordion-menu" data-accordion-btn>
-            <p class="menu-title">Co-Ord Sets</p>
+
+
+            <a href="catg_page.php?catg=Co-Ord Sets">
+              <p class="menu-title">Co-Ord Sets</p>
+            </a>
 
 
           </button>
@@ -518,7 +537,11 @@
         <li class="menu-category">
 
           <button class="accordion-menu" data-accordion-btn>
-            <p class="menu-title">Anarkali Suit</p>
+           
+
+            <a href="catg_page.php?catg=Anarkali salwar suit">
+              <p class="menu-title">Anarkali salwar suit</p>
+            </a>
 
 
           </button>
@@ -527,9 +550,7 @@
 
         </li>
 
-        <li class="menu-category">
-          <a href="#" class="menu-title">Blog</a>
-        </li>
+
 
         <li class="menu-category">
           <a href="#" class="menu-title">Hot Offers</a>
