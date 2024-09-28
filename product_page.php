@@ -2,8 +2,8 @@
 
 <?php
 session_start();
-include ("header.php");
-include ("connection.php");
+include("header.php");
+include("connection.php");
 
 
 
@@ -261,7 +261,7 @@ include ("connection.php");
 
 
                                     <div class="showcase-banner">
-                                        <video src="dashboard/all_videos/<?php echo $row["video"] ?>" width="300px"
+                                        <video src="https://rewaazvideo2.s3.amazonaws.com/<?php echo $row["video_link"]?>" width="300px"
                                             height="510px" controls alt="shampoo, conditioner & facewash packs"
                                             class="showcase-img"></video>
                                     </div>
@@ -307,13 +307,13 @@ include ("connection.php");
 
                                             <div style="margin-top: 10px; margin-bottom:10px;" class="price-box">
                                                 <p class="price">
-                                                &#8377;<?php echo $row["price"] ?>
+                                                    &#8377;<?php echo $row["price"] ?>
 
 
                                                 </p>
 
                                                 <del>
-                                                &#8377;<?php echo $row["mrp"] ?>
+                                                    &#8377;<?php echo $row["mrp"] ?>
                                                 </del>
                                             </div>
                                             <div
@@ -412,12 +412,48 @@ include ("connection.php");
 
                                         </div>
 
-                                        <button type="button" onclick='my_wishlist()' style="display:inline;" name="submit" class="add-cart-btn">add to
+                                        <button type="button" onclick='my_wishlist()' style="display:inline;" name="submit"
+                                            class="add-cart-btn">add to
                                             Wishlist</button>
 
-                                        <button type="button" style="display:inline; margin-left:10px;"
-                                            class="add-cart-btn">Visit for
-                                            buy</button>
+
+
+                                        <?php
+
+
+                                        $product_id = $_GET['product_id'];
+
+
+                                        // SQL QUERY 
+                                        $query = "SELECT * FROM `products` WHERE product_id = '$product_id' ;";
+
+                                        // FETCHING DATA FROM DATABASE 
+                                        $result = $conn->query($query);
+
+                                        if ($result->num_rows > 0) {
+                                            // OUTPUT DATA OF EACH ROW 
+                                            while ($row = $result->fetch_assoc()) {
+
+                                                $catg = strtoupper($row["catg"]);
+
+                                                
+
+
+                                                ?>
+
+
+                                                <button type="button" style="display:inline; margin-left:10px;"
+                                                    class="add-cart-btn"> <a style=" color: white; " href="<?php echo $row["p_link"] ?>">
+                                                    Buy Now</a></button>
+
+                                                <?php
+                                            }
+                                        } else {
+                                            echo "0 results";
+                                        }
+
+
+                                        ?>
                                         </form>
 
 
@@ -513,12 +549,12 @@ include ("connection.php");
                                     <div class="showcase-banner">
 
                                         <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"><img
-                                                src="dashboard/all_images/<?php echo $row["image"] ?>"
+                                                src="https://rewaaz2images.s3.amazonaws.com/<?php echo $row["image"]?>"
                                                 alt="Mens Winter Leathers Jackets" width="300" class="product-img default">
-                                            <img src="dashboard/all_images/<?php echo $row["image"] ?>"
+                                            <img src="https://rewaaz2images.s3.amazonaws.com/<?php echo $row["image"]?>"
                                                 alt="Mens Winter Leathers Jackets" width="300" class="product-img hover"></a>
 
-                                        <p class="showcase-badge"><?php echo $row["discount"] ?></p>
+                                        <p class="showcase-badge"><?php echo $row["discount"] ?>%</p>
 
 
                                         <div class="showcase-actions">
@@ -558,21 +594,21 @@ include ("connection.php");
 
 <script>
 
-    function my_wishlist(){
+    function my_wishlist() {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-    
-              alert(xhttp.responseText)
+
+                alert(xhttp.responseText)
 
             }
         }
 
         xhttp.open('POST', 'add_wishlist.php', true);
         xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhttp.send('product_id=<?php echo $_GET['product_id']?>&email=<?php echo $_SESSION["login_email"]?>');
+        xhttp.send('product_id=<?php echo $_GET['product_id'] ?>&email=<?php echo $_SESSION["login_email"] ?>');
 
-        
+
     }
 </script>
 
@@ -587,5 +623,5 @@ include ("connection.php");
 </main>
 
 <?php
-include ("footer.php");
+include("footer.php");
 ?>

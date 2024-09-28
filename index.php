@@ -46,7 +46,7 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="dashboard/all_images/B0CD424777 .jpg" alt="baby fabric shoes" width="75"
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0CD424777 .jpg" alt="baby fabric shoes" width="75"
                                         height="100" class="showcase-img">
                                 </a>
 
@@ -83,7 +83,7 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="dashboard/all_images/B0B4JLTR93.jpg" alt="men's hoodies t-shirt"
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0B4JLTR93.jpg" alt="men's hoodies t-shirt"
                                         class="showcase-img" width="75" height="90">
                                 </a>
 
@@ -112,7 +112,7 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="dashboard/all_images/B0C5SXFRTK.jpg" alt="girls t-shirt"
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0C5SXFRTK.jpg" alt="girls t-shirt"
                                         class="showcase-img" width="75" height="90">
                                 </a>
 
@@ -141,7 +141,7 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="dashboard/all_images/B0C4FD3N7R.jpg" alt="woolen hat for men"
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0C4FD3N7R.jpg" alt="woolen hat for men"
                                         class="showcase-img" width="75" height="90">
                                 </a>
 
@@ -169,7 +169,7 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="dashboard/all_images/B0BN1VNV12.jpg" alt="woolen hat for men"
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0BN1VNV12.jpg" alt="woolen hat for men"
                                         class="showcase-img" width="75" height="90">
                                 </a>
 
@@ -235,7 +235,7 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="dashboard/all_images/B0CD424777 .jpg" alt="baby fabric shoes" width="75"
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0CD424777 .jpg" alt="baby fabric shoes" width="75"
                                         height="100" class="showcase-img">
                                 </a>
 
@@ -272,7 +272,7 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="dashboard/all_images/B0B4JLTR93.jpg" alt="men's hoodies t-shirt"
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0B4JLTR93.jpg" alt="men's hoodies t-shirt"
                                         class="showcase-img" width="75" height="90">
                                 </a>
 
@@ -301,7 +301,7 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="dashboard/all_images/B0C5SXFRTK.jpg" alt="girls t-shirt"
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0C5SXFRTK.jpg" alt="girls t-shirt"
                                         class="showcase-img" width="75" height="90">
                                 </a>
 
@@ -330,7 +330,7 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="dashboard/all_images/B0C4FD3N7R.jpg" alt="woolen hat for men"
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0C4FD3N7R.jpg" alt="woolen hat for men"
                                         class="showcase-img" width="75" height="90">
                                 </a>
 
@@ -358,7 +358,7 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="dashboard/all_images/B0BN1VNV12.jpg" alt="woolen hat for men"
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0BN1VNV12.jpg" alt="woolen hat for men"
                                         class="showcase-img" width="75" height="90">
                                 </a>
 
@@ -448,10 +448,10 @@ error_reporting(0);
 
                                     <div class="showcase-banner">
 
-                                        <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"><img
-                                                src="dashboard/all_images/<?php echo $row["image"] ?>"
+                                        <a href="product_page.php?product_id=<?php echo $row["product_id"]?>"><img
+                                                src="https://rewaaz2images.s3.amazonaws.com/<?php echo $row["image"]?>"
                                                 alt="Mens Winter Leathers Jackets" width="300" class="product-img default">
-                                            <img src="dashboard/all_images/<?php echo $row["image"] ?>"
+                                            <img src="https://rewaaz2images.s3.amazonaws.com/<?php echo $row["image"]?>"
                                                 alt="Mens Winter Leathers Jackets" width="300" class="product-img hover"></a>
 
                                         <p class="showcase-badge">-<?php echo $row["discount"] ?>%</p>

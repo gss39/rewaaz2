@@ -9,6 +9,10 @@
 
 
 /* add coded---------------------------------- */
+@font-face {
+  font-family: Poppins;
+  src: url(../font/Poppins-SemiBold.ttf);
+}
 
 
 #size {
@@ -133,13 +137,9 @@ span {
   display: inline-block;
 }
 
-@font-face {
-  font-family: Poppins;
-  src: url(../font/Poppins-SemiBold.ttf);
-}
 
 html {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
 
   overscroll-behavior: contain;
 
@@ -149,11 +149,11 @@ html {
 input {
   display: block;
   width: 100%;
-  font: inherit;
+  font: Poppins;
 }
 
 input::placeholder {
-  font: inherit;
+  font: Poppins;
 }
 
 body {
