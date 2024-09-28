@@ -261,7 +261,7 @@ include("connection.php");
 
 
                                     <div class="showcase-banner">
-                                        <video src="https://rewaazvideo2.s3.amazonaws.com/<?php echo $row["video_link"]?>" width="300px"
+                                        <video src="https://rewaazvideo2.s3.amazonaws.com/<?php echo $row["video"]?>" width="300px"
                                             height="510px" controls alt="shampoo, conditioner & facewash packs"
                                             class="showcase-img"></video>
                                     </div>
