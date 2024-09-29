@@ -42,7 +42,6 @@
   <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}"> -->
 
 
-
   <!--
     - google font link
   -->
@@ -51,6 +50,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
  -->
+
+ <style>
+
+.pagination {
+  margin-bottom: 100px;
+  padding-top: 0px;
+ width: auto;
+
+
+ max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #9d517d;
+}
+
+.pagination a.active {
+  background-color: #9d517d;
+  color: white;
+  border: 1px solid #9d517d;
+}
+
+.pagination a:hover:not(.active) {background-color: #9d517d;}
+
+</style>
 
 </head>
 

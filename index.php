@@ -46,8 +46,8 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0CD424777 .jpg" alt="baby fabric shoes" width="75"
-                                        height="100" class="showcase-img">
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0CD424777 .jpg"
+                                        alt="baby fabric shoes" width="75" height="100" class="showcase-img">
                                 </a>
 
                                 <div class="showcase-content">
@@ -83,8 +83,8 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0B4JLTR93.jpg" alt="men's hoodies t-shirt"
-                                        class="showcase-img" width="75" height="90">
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0B4JLTR93.jpg"
+                                        alt="men's hoodies t-shirt" class="showcase-img" width="75" height="90">
                                 </a>
 
                                 <div class="showcase-content">
@@ -141,8 +141,8 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0C4FD3N7R.jpg" alt="woolen hat for men"
-                                        class="showcase-img" width="75" height="90">
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0C4FD3N7R.jpg"
+                                        alt="woolen hat for men" class="showcase-img" width="75" height="90">
                                 </a>
 
                                 <div class="showcase-content">
@@ -169,8 +169,8 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0BN1VNV12.jpg" alt="woolen hat for men"
-                                        class="showcase-img" width="75" height="90">
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0BN1VNV12.jpg"
+                                        alt="woolen hat for men" class="showcase-img" width="75" height="90">
                                 </a>
 
                                 <div class="showcase-content">
@@ -235,8 +235,8 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0CD424777 .jpg" alt="baby fabric shoes" width="75"
-                                        height="100" class="showcase-img">
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0CD424777 .jpg"
+                                        alt="baby fabric shoes" width="75" height="100" class="showcase-img">
                                 </a>
 
                                 <div class="showcase-content">
@@ -272,8 +272,8 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0B4JLTR93.jpg" alt="men's hoodies t-shirt"
-                                        class="showcase-img" width="75" height="90">
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0B4JLTR93.jpg"
+                                        alt="men's hoodies t-shirt" class="showcase-img" width="75" height="90">
                                 </a>
 
                                 <div class="showcase-content">
@@ -330,8 +330,8 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0C4FD3N7R.jpg" alt="woolen hat for men"
-                                        class="showcase-img" width="75" height="90">
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0C4FD3N7R.jpg"
+                                        alt="woolen hat for men" class="showcase-img" width="75" height="90">
                                 </a>
 
                                 <div class="showcase-content">
@@ -358,8 +358,8 @@ error_reporting(0);
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0BN1VNV12.jpg" alt="woolen hat for men"
-                                        class="showcase-img" width="75" height="90">
+                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0BN1VNV12.jpg"
+                                        alt="woolen hat for men" class="showcase-img" width="75" height="90">
                                 </a>
 
                                 <div class="showcase-content">
@@ -405,8 +405,8 @@ error_reporting(0);
             <div class="product-box">
 
                 <!--
-            - PRODUCT GRID
-          -->
+             - PRODUCT GRID
+             -->
 
                 <div class="product-main">
 
@@ -422,11 +422,24 @@ error_reporting(0);
 
                         $_SESSION['search_query'] = $search;
 
+                        $limit = 20;
+                        
+
+                        if(isset($_GET['page'])){
+                            $page = $_GET['page'];
+                        }
+                        else{
+                           $page = 1;
+
+                        }
+                        $offset = ($page - 1) * $limit;
+
+
                         // OR  title LIKE '%{$search}%'  OR  catg LIKE '%{$search}%' 
                         
                         // 
                         // SQL QUERY 
-                        $query = "SELECT * FROM `products` WHERE title LIKE '%{$search}%'  ";
+                        $query = "SELECT * FROM `products` WHERE title LIKE '%{$search}%' LIMIT $limit  OFFSET $offset ";
 
 
                         // FETCHING DATA FROM DATABASE 
@@ -448,10 +461,10 @@ error_reporting(0);
 
                                     <div class="showcase-banner">
 
-                                        <a href="product_page.php?product_id=<?php echo $row["product_id"]?>"><img
-                                                src="https://rewaaz2images.s3.amazonaws.com/<?php echo $row["image"]?>"
+                                        <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"><img
+                                                src="https://rewaaz2images.s3.amazonaws.com/<?php echo $row["image"] ?>"
                                                 alt="Mens Winter Leathers Jackets" width="300" class="product-img default">
-                                            <img src="https://rewaaz2images.s3.amazonaws.com/<?php echo $row["image"]?>"
+                                            <img src="https://rewaaz2images.s3.amazonaws.com/<?php echo $row["image"] ?>"
                                                 alt="Mens Winter Leathers Jackets" width="300" class="product-img hover"></a>
 
                                         <p class="showcase-badge">-<?php echo $row["discount"] ?>%</p>
@@ -470,20 +483,68 @@ error_reporting(0);
                             echo "0 results";
                         }
 
-                        $conn->close();
+
 
                         ?>
 
 
                     </div>
 
+
+
+
+
+
+
                 </div>
+
+
+
+                <?php
+
+
+
+                $query1 = "SELECT * FROM `products` ";
+                $result1 = mysqli_query($conn, $query1) or die("query faild");
+                if (mysqli_num_rows($result1) > 0) {
+
+                    $total_records1 = mysqli_num_rows( $result1);
+
+                    
+                    $total_page = ceil($total_records1 / $limit);
+
+                     $next_page = $page +1;
+                     $preious_page =  $page-1;
+
+                     if($page == $total_page){
+
+                        $next_page = $total_page;
+
+                     }
+
+                     if($page == 1){
+
+                        $preious_page = 1;
+
+                     }
+                    
+                    echo '<div class="pagination" align="center">
+                    <a href="index.php?page='.$preious_page.'">&laquo;</a>';
+                    for ($i = 1; $i <= $total_page; $i++) {
+
+                        echo '<a href="index.php?page='.$i.'">'.$i.'</a>';
+
+                    }
+                    echo '<a href="index.php?page='.$next_page.'">&raquo;</a></div>';
+                }
+
+                ?>
+
+
 
             </div>
 
         </div>
-
-    </div>
 
 
 </main>
