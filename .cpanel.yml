@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/hwqnl2tm2k32/public_html/rewaaz.in
+    - export DEPLOYPATH=/home/hwqnl2tm2k32/rewaaz2
     - /bin/cp * $DEPLOYPATH
     - /bin/cp -R dashboard $DEPLOYPATH
