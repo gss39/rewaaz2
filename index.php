@@ -423,13 +423,13 @@ error_reporting(0);
                         $_SESSION['search_query'] = $search;
 
                         $limit = 20;
-                        
+                         
+                        $title = 'NA';
 
-                        if(isset($_GET['page'])){
+                        if (isset($_GET['page'])) {
                             $page = $_GET['page'];
-                        }
-                        else{
-                           $page = 1;
+                        } else {
+                            $page = 1;
 
                         }
                         $offset = ($page - 1) * $limit;
@@ -439,8 +439,8 @@ error_reporting(0);
                         
                         // 
                         // SQL QUERY 
-                        $query = "SELECT * FROM `products` WHERE title LIKE '%{$search}%' LIMIT $limit  OFFSET $offset ";
-
+                        // $query = "SELECT * FROM `products` WHERE title LIKE '%{$search}%' LIMIT $limit  OFFSET $offset ";
+                        $query = "SELECT * FROM `products` WHERE title LIKE '%{$search}%' AND title NOT IN ('NA') LIMIT $limit  OFFSET $offset";
 
                         // FETCHING DATA FROM DATABASE 
                         $result = $conn->query($query);
@@ -463,11 +463,11 @@ error_reporting(0);
 
                                         <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"><img
                                                 src="https://rewaaz2images.s3.amazonaws.com/<?php echo $row["image"] ?>"
-                                                alt="Mens Winter Leathers Jackets" width="300" class="product-img default">
-                                            <img src="https://rewaaz2images.s3.amazonaws.com/<?php echo $row["image"] ?>"
-                                                alt="Mens Winter Leathers Jackets" width="300" class="product-img hover"></a>
+                                                alt="Mens Winter Leathers Jackets" width="300" loading="lazy" id="display_image"
+                                                class="product-img default">
+                                        </a>
 
-                                        <p class="showcase-badge">-<?php echo $row["discount"] ?>%</p>
+                                        <p class="showcase-badge">-<?php echo $row["discount"]?>%</p>
 
 
                                         <div class="showcase-actions">
@@ -508,34 +508,34 @@ error_reporting(0);
                 $result1 = mysqli_query($conn, $query1) or die("query faild");
                 if (mysqli_num_rows($result1) > 0) {
 
-                    $total_records1 = mysqli_num_rows( $result1);
+                    $total_records1 = mysqli_num_rows($result1);
 
-                    
+
                     $total_page = ceil($total_records1 / $limit);
 
-                     $next_page = $page +1;
-                     $preious_page =  $page-1;
+                    $next_page = $page + 1;
+                    $preious_page = $page - 1;
 
-                     if($page == $total_page){
+                    if ($page == $total_page) {
 
                         $next_page = $total_page;
 
-                     }
+                    }
 
-                     if($page == 1){
+                    if ($page == 1) {
 
                         $preious_page = 1;
 
-                     }
-                    
+                    }
+
                     echo '<div class="pagination" align="center">
-                    <a href="index.php?page='.$preious_page.'">&laquo;</a>';
+                    <a href="index.php?page=' . $preious_page . '">&laquo;</a>';
                     for ($i = 1; $i <= $total_page; $i++) {
 
-                        echo '<a href="index.php?page='.$i.'">'.$i.'</a>';
+                        echo '<a href="index.php?page=' . $i . '">' . $i . '</a>';
 
                     }
-                    echo '<a href="index.php?page='.$next_page.'">&raquo;</a></div>';
+                    echo '<a href="index.php?page=' . $next_page . '">&raquo;</a></div>';
                 }
 
                 ?>

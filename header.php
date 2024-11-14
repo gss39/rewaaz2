@@ -51,38 +51,44 @@
     rel="stylesheet">
  -->
 
- <style>
-
-.pagination {
-  margin-bottom: 100px;
-  padding-top: 0px;
- width: auto;
+  <style>
 
 
- max-width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  
-}
 
-.pagination a {
-  color: black;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-  transition: background-color .3s;
-  border: 1px solid #9d517d;
-}
 
-.pagination a.active {
-  background-color: #9d517d;
-  color: white;
-  border: 1px solid #9d517d;
-}
 
-.pagination a:hover:not(.active) {background-color: #9d517d;}
 
-</style>
+    .pagination {
+      margin-bottom: 100px;
+      padding-top: 0px;
+      width: auto;
+
+
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+    .pagination a {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color .3s;
+      border: 1px solid #9d517d;
+    }
+
+    .pagination a.active {
+      background-color: #9d517d;
+      color: white;
+      border: 1px solid #9d517d;
+    }
+
+    .pagination a:hover:not(.active) {
+      background-color: #9d517d;
+    }
+  </style>
 
 </head>
 
@@ -240,7 +246,9 @@
             <a href="index.php" class="menu-title">Home</a>
           </li>
 
-
+          <!-- <li class="menu-category">
+            <a href="#" class="menu-title">New</a>
+          </li> -->
 
           <!-- <a href="#" class="menu-title">Categories</a>
 
@@ -387,54 +395,90 @@
           </li>
 
           <li class="menu-category">
-            <a href='catg_page.php?catg=Kurta sets' class="menu-title">Kurta Sets</a>
+            <a href="#" class="menu-title">Kurta sets</a>
 
+            
+          </li>
+          <li class="menu-category">
+            <a href="#" class="menu-title">Saree</a>
 
+            <!-- <ul class="dropdown-list">
+
+              <li class="dropdown-item">
+                <a href="#">Shirt</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Shorts &amp; Jeans</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Safety Shoes</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Wallet</a>
+              </li>
+
+            </ul> -->
+          </li>
+
+          <li class="menu-category">
+            <a href="#" class="menu-title">Lahnga</a>
+
+            <!-- <ul class="dropdown-list"> -->
+
+              <!-- <li class="dropdown-item">
+                <a href="#">Nails</a>
+              </li> -->
+
+            
+
+            <!-- </ul> -->
           </li>
 
 
 
           <li class="menu-category">
-            <a href="catg_page.php?catg=Saree" class="menu-title">Sarees</a>
+            <a href="#" class="menu-title">Anarkali sets</a>
 
+            <!-- <ul class="dropdown-list">
 
+              <li class="dropdown-item">
+                <a href="#">Kitchen</a>
+              </li>
 
+             
+
+            </ul> -->
           </li>
 
-          <li class="menu-category">
-            <a href="catg_page.php?catg=Dress" class="menu-title"> Dress</a>
-
-
-
-          </li>
-
-
-
-
+         
 
 
 
           <li class="menu-category">
-            <a href="catg_page.php?catg=Lahnga" class="menu-title">Lahnga</a>
+            <a href="#" class="menu-title">Dress</a>
+
+
           </li>
 
+          
+          <li class="menu-category">
+            <a href="#" class="menu-title">Co-ord-sets</a>
+
+
+          </li>
 
 
           <li class="menu-category">
-            <a href="catg_page.php?catg=Anarkali Salwar Suit" class="menu-title">Anarkali Salwar Suit</a>
-
-
+            <a href="#" class="menu-title">Tranding</a>
           </li>
 
           <li class="menu-category">
-            <a href="catg_page.php?catg=Co-Ord-sets" class="menu-title">Co-Ord-sets</a>
+            <a href="#" class="menu-title">New</a>
           </li>
 
-
-
-          <li class="menu-category">
-            <a href="#" class="menu-title">Hot Offers</a>
-          </li>
 
         </ul>
 
@@ -483,69 +527,128 @@
       <ul class="mobile-menu-category-list">
 
         <li class="menu-category">
-          <a href="#" class="menu-title">Home</a>
+          <a href="index.php" class="menu-title">Home</a>
         </li>
 
         <li class="menu-category">
+          <a href="catg_page.php?catg=Kurta sets" class="menu-title">Kurta sets</a>
+        </li>
+
+        <li class="menu-category">
+          <a href="catg_page.php?catg=Saree" class="menu-title">Saree</a>
+        </li>
+
+        <li class="menu-category">
+          <a href="catg_page.php?catg=Lahnga" class="menu-title">Lahnga</a>
+        </li>
+
+        <li class="menu-category">
+          <a href="catg_page.php?catg=Anarkali salwar suit" class="menu-title">Anarkali sets</a>
+        </li>
+
+        <li class="menu-category">
+          <a href="catg_page.php?catg=Dress" class="menu-title">Dress</a>
+        </li>
+
+        <li class="menu-category">
+          <a href="catg_page.php?catg=Co-ord-sets" class="menu-title">Co-ord-sets</a>
+        </li>
+
+
+        <!-- <li class="menu-category">
 
           <button class="accordion-menu" data-accordion-btn>
-            <a href="catg_page.php?catg=Kurta sets">
-              <p class="menu-title">Kurta Sets</p>
-            </a>
+            <p class="menu-title">Fashion</p>
+
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
+          </button> -->
+
+          <!-- <ul class="submenu-category-list" data-accordion>
+
+            <li class="submenu-category">
+              <a href="catg_page.php?catg=Kurta sets" class="submenu-title">Kurta sets</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="catg_page.php?catg=Saree" class="submenu-title">Sarees</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="catg_page.php?catg=Anarkali salwar suit" class="submenu-title">Anarkali Sets</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="catg_page.php?catg=Dress" class="submenu-title">Dress</a>
+            </li>
+
+          </ul> -->
+
+        <!-- </li> -->
+
+        <!-- <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
 
 
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Home Gedgets</p>
 
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
           </button>
 
-          <ul class="submenu-category-list" data-accordion>
+            <ul class="submenu-category-list" data-accordion>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Kitchen Gedgets</a>
+              </li>
 
 
-
-          </ul>
-
-        </li>
-
-        <li class="menu-category">
-
-          <button class="accordion-menu" data-accordion-btn>
-
-
-            <a href="catg_page.php?catg=Saree">
-              <p class="menu-title">Saares</p>
-            </a>
-
-
+            </ul>
           </button>
 
+        </li> -->
 
-
-        </li>
-
-        <li class="menu-category">
+        <!-- <li class="menu-category">
 
           <button class="accordion-menu" data-accordion-btn>
 
-            <a href="catg_page.php?catg=Dress">
-              <p class="menu-title">Dress</p>
-            </a>
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Beauty</p>
 
-
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
           </button>
 
+            <ul class="submenu-category-list" data-accordion>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Nails</a>
+              </li>
 
 
-        </li>
+            </ul>
+          </button>
+
+        </li> -->
 
         <li class="menu-category">
 
-          <button class="accordion-menu" data-accordion-btn>
+          <!-- <button class="accordion-menu" data-accordion-btn> -->
 
             <a href="catg_page.php?catg=Lahnga">
-              <p class="menu-title">Lahnga</p>
+              <p class="menu-title">Tranding</p>
             </a>
 
 
-          </button>
+          <!-- </button> -->
 
 
 
@@ -557,7 +660,7 @@
 
 
             <a href="catg_page.php?catg=Co-Ord Sets">
-              <p class="menu-title">Co-Ord Sets</p>
+              <p class="menu-title">New</p>
             </a>
 
 
@@ -570,11 +673,11 @@
         <li class="menu-category">
 
           <button class="accordion-menu" data-accordion-btn>
-           
 
+            <!-- 
             <a href="catg_page.php?catg=Anarkali salwar suit">
               <p class="menu-title">Anarkali salwar suit</p>
-            </a>
+            </a> -->
 
 
           </button>

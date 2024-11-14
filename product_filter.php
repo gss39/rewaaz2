@@ -390,77 +390,94 @@ error_reporting(0);
             - PRODUCT GRID
           -->
 
-        <div class="product-main">
+          <div class="product-main">
 
 
 
-          <div id="search_products" class="product-grid">
+<div id="search_products" class="product-grid">
 
 
-            <?php
+    <?php
 
 
-            $search = $_POST["search_item"];
+    $search = $_POST["search_item"];
 
-            $_SESSION['search_query'] = $search;
+    $_SESSION['search_query'] = $search;
 
-            // OR  title LIKE '%{$search}%'  OR  catg LIKE '%{$search}%' 
+    $limit = 20;
 
-            // 
-            // SQL QUERY 
-            $query = "SELECT * FROM `products` WHERE title LIKE '%{$search}%'  ";
 
-           
-              // FETCHING DATA FROM DATABASE 
-              $result = $conn->query($query);
+    if (isset($_GET['page'])) {
+        $page = $_GET['page'];
+    } else {
+        $page = 1;
 
-              if ($result->num_rows > 0) {
-                // OUTPUT DATA OF EACH ROW 
-                while ($row = $result->fetch_assoc()) {
+    }
+    $offset = ($page - 1) * $limit;
 
-                  $catg = strtoupper($row["catg"]);
 
-                   // $x = $row["sizes"];
-                  // $y = explode("!", $x);
-                   
-                   
-                  ?>
-                     
-                  <div class="showcase">
+    // OR  title LIKE '%{$search}%'  OR  catg LIKE '%{$search}%' 
+    
+    // 
+    // SQL QUERY 
+    $query = "SELECT * FROM `products` WHERE title LIKE '%{$search}%' LIMIT $limit  OFFSET $offset ";
 
-                    <div class="showcase-banner">
 
-                      <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"><img
-                          src="dashboard/all_images/<?php echo $row["image"] ?>" alt="Mens Winter Leathers Jackets" width="300"
-                          class="product-img default">
-                        <img src="dashboard/all_images/<?php echo $row["image"] ?>" alt="Mens Winter Leathers Jackets" width="300"
-                          class="product-img hover"></a>
+    // FETCHING DATA FROM DATABASE 
+    $result = $conn->query($query);
 
-                      <p class="showcase-badge">-<?php echo $row["discount"]?>%</p>
-                     
+    if ($result->num_rows > 0) {
+        // OUTPUT DATA OF EACH ROW 
+        while ($row = $result->fetch_assoc()) {
 
-                      <div class="showcase-actions">
-                      
-                      </div>
+            $catg = strtoupper($row["catg"]);
 
-                    </div>
-                  </div>
-
-                  <?php
-                }
-              }
-             else {
-              echo "0 results";
-            }
-
-            $conn->close();
+            // $x = $row["sizes"];
+            // $y = explode("!", $x);
+    
 
             ?>
 
+            <div class="showcase">
 
-          </div>
+                <div class="showcase-banner">
 
-        </div>
+                    <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"><img
+                            src="https://rewaaz2images.s3.amazonaws.com/<?php echo $row["image"] ?>"
+                            alt="Mens Winter Leathers Jackets" width="300" loading="lazy" id="display_image"
+                            class="product-img default">
+                    </a>
+
+                    <p class="showcase-badge">-<?php echo $row["discount"] ?>%</p>
+
+
+                    <div class="showcase-actions">
+
+                    </div>
+
+                </div>
+            </div>
+
+            <?php
+        }
+    } else {
+        echo "0 results";
+    }
+
+
+
+    ?>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
 
       </div>
 

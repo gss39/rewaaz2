@@ -277,9 +277,9 @@ include ('connection.php');
 
                     <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"><img
                         src="dashboard/all_images/<?php echo $row["image"] ?>" alt="Mens Winter Leathers Jackets"
-                        width="300" class="product-img default">
+                        width="300" loading="lazy" class="product-img default" >
                       <img src="dashboard/all_images/<?php echo $row["image"] ?>" alt="Mens Winter Leathers Jackets"
-                        width="300" class="product-img hover"></a>
+                        width="300" class="product-img hover" loading="lazy"></a>
 
                     <p class="showcase-badge"><?php echo $row["discount"] ?></p>
 

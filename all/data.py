@@ -9,10 +9,10 @@ from flask import Flask, render_template, request, url_for, redirect
 from jinja2 import Template
 
 # internal files
-import all.database as database
+import database as database
 
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
 
 def specific_string(length):
@@ -41,202 +41,201 @@ headers = {
 }
 
 
+# def main(p_id):
 
-def main(p_id):
+    # my_product_id = "B0BN1VNV12"
 
-    my_product_id = p_id
+my_product_id = "B0BN1VNV12"
 
-    # product_id = "B0BQQSTC82"
+URL = "https://www.amazon.in/dp/" + my_product_id + "/ "
 
-    URL = "https://www.amazon.in/dp/" + my_product_id + "/ "
+# Making the HTTP Request
+webpage = requests.get(URL, headers=headers,
+                        cookies=cookies)
 
-    # Making the HTTP Request
-    webpage = requests.get(URL, headers=headers,
-                           cookies=cookies)
+# Creating the Soup Object containing all data
+soup = BeautifulSoup(webpage.content, "lxml")
 
-    # Creating the Soup Object containing all data
-    soup = BeautifulSoup(webpage.content, "lxml")
+# retrieving product title
+all_title = []
+try:
+    # Outer Tag Object
+    title = soup.find("span",
+                        attrs={"id": 'productTitle'})
 
-    # retrieving product title
-    all_title = []
+    # Inner NavigableString Object
+    title_value = title.string
+
+    # Title as a string value
+    title_string = title_value.strip().replace(',', '')
+
+except AttributeError:
+    title_string = "NA"
+
+print("product Title = ", title_string)
+
+# saving the title in the file
+all_title.append(title_string)
+# File.write(f"{title_string},")
+
+# retrieving price
+all_price = []
+try:
+    price = soup.find(
+        "span", attrs={'class': 'a-price-whole'}).string.strip().replace(',', '')
+    # we are omitting unnecessary spaces
+    # and commas form our string
+except AttributeError:
+    price = "NA"
+print("Products price = ", price)
+
+# saving
+# File.write(f"{price},")
+all_price.append(price)
+
+# retrieving product discount------------------------------------------
+all_discount = []
+try:
+    discount = soup.find("div", attrs={
+        'class': 'a-section '}).string.strip().replace(',', '')
+
+except AttributeError:
+
     try:
-        # Outer Tag Object
-        title = soup.find("span",
-                          attrs={"id": 'productTitle'})
+        discount = soup.find(
+            "span", attrs={'class': 'a-size-large a-color-price savingPriceOverride aok-align-center reinventPriceSavingsPercentageMargin savingsPercentage'}).string.strip().replace(',', '')
+    except:
+        discount = "NA"
+    all_discount.append(discount)
+    # File.write(f"{discount},")
 
-        # Inner NavigableString Object
-        title_value = title.string
+print("discount = ", discount)
 
-        # Title as a string value
-        title_string = title_value.strip().replace(',', '')
+# retrieving product size--------------------------------------------------
 
-    except AttributeError:
-        title_string = "NA"
+# all_size = []
+# size = soup.select_one(
+#     'select[name="dropdown_selected_size_name"]').select('option')
+# size.pop(0)
+# for op in size:
 
-    print("product Title = ", title_string)
+#     all_size.append(op.get_text())
+#     print(op.get_text())
+# # File.write(f"{op.get_text()},")
 
-    # saving the title in the file
-    all_title.append(title_string)
-    # File.write(f"{title_string},")
+# retrieving product color--------------------------------------------------
 
-    # retrieving price
-    all_price = []
+all_colors = []
+for li in soup.find_all("img", attrs={'class': 'imgSwatch'}):
+    all_colors.append(li['alt'])
+
+print("color = ", all_colors)
+# File.write(f"{li['alt']},")
+
+# retrieving product rating------------------------------------------------
+all_rating = []
+try:
+    rating = soup.find("i", attrs={
+        'class': 'a-icon a-icon-star a-star-4-5'}).string.strip().replace(',', '')
+
+except AttributeError:
+
     try:
-        price = soup.find(
-            "span", attrs={'class': 'a-price-whole'}).string.strip().replace(',', '')
-        # we are omitting unnecessary spaces
-        # and commas form our string
-    except AttributeError:
-        price = "NA"
-    print("Products price = ", price)
+        rating = soup.find(
+            "span", attrs={'class': 'a-icon-alt'}).string.strip().replace(',', '')
+    except:
 
-    # saving
-    # File.write(f"{price},")
-    all_price.append(price)
+        rating = "NA"
+all_rating.append(rating)
+print("Overall rating = ", rating)
 
-    # retrieving product discount------------------------------------------
-    all_discount = []
-    try:
-        discount = soup.find("div", attrs={
-            'class': 'a-section '}).string.strip().replace(',', '')
+# File.write(f"{rating},")
 
-    except AttributeError:
+# retrieving product MRP-----------------------------------------------
+# all_mrp = []
+# try:
+#     mrp = soup.find(
+#         "span", attrs={'class': 'a-size-small aok-offscreen'}).string.strip().replace(',', '')
 
-        try:
-            discount = soup.find(
-                "span", attrs={'class': 'a-size-large a-color-price savingPriceOverride aok-align-center reinventPriceSavingsPercentageMargin savingsPercentage'}).string.strip().replace(',', '')
-        except:
-            discount = "NA"
-        all_discount.append(discount)
-        # File.write(f"{discount},")
+# except AttributeError:
+#     mrp = "NA"
+# all_mrp.append(mrp)
+# print("Total mrp = ", mrp)
+# # File.write(f"{review_count},")
 
-    print("discount = ", discount)
+# print availablility status-----------------------------------------------
+all_avel = []
+try:
+    available = soup.find("div", attrs={'id': 'availability'})
+    available = available.find("span").string.strip().replace(',', '')
 
-  # retrieving product size--------------------------------------------------
+except AttributeError:
+    available = "NA"
+print("Availability = ", available)
 
-    # all_size = []
-    # size = soup.select_one(
-    #     'select[name="dropdown_selected_size_name"]').select('option')
-    # size.pop(0)
-    # for op in size:
+# saving the availability and closing the line
+all_avel.append(available)
+# File.write(f"{available},\n")
 
-    #     all_size.append(op.get_text())
-    #     print(op.get_text())
-    # # File.write(f"{op.get_text()},")
+# closing the file
+# File.close()
 
-  # retrieving product color--------------------------------------------------
+listdata = [all_colors, all_title,
+            all_discount, all_rating, all_avel, all_price]
 
-    all_colors = []
-    for li in soup.find_all("img", attrs={'class': 'imgSwatch'}):
-        all_colors.append(li['alt'])
-
-    print("color = ", all_colors)
-    # File.write(f"{li['alt']},")
-
-    # retrieving product rating------------------------------------------------
-    all_rating = []
-    try:
-        rating = soup.find("i", attrs={
-            'class': 'a-icon a-icon-star a-star-4-5'}).string.strip().replace(',', '')
-
-    except AttributeError:
-
-        try:
-            rating = soup.find(
-                "span", attrs={'class': 'a-icon-alt'}).string.strip().replace(',', '')
-        except:
-
-            rating = "NA"
-    all_rating.append(rating)
-    print("Overall rating = ", rating)
-
-    # File.write(f"{rating},")
-
-    # retrieving product MRP-----------------------------------------------
-    # all_mrp = []
-    # try:
-    #     mrp = soup.find(
-    #         "span", attrs={'class': 'a-size-small aok-offscreen'}).string.strip().replace(',', '')
-
-    # except AttributeError:
-    #     mrp = "NA"
-    # all_mrp.append(mrp)
-    # print("Total mrp = ", mrp)
-    # # File.write(f"{review_count},")
-
-    # print availablility status-----------------------------------------------
-    all_avel = []
-    try:
-        available = soup.find("div", attrs={'id': 'availability'})
-        available = available.find("span").string.strip().replace(',', '')
-
-    except AttributeError:
-        available = "NA"
-    print("Availability = ", available)
-
-    # saving the availability and closing the line
-    all_avel.append(available)
-    # File.write(f"{available},\n")
-
-    # closing the file
-    # File.close()
-
-    listdata = [all_colors, all_title,
-                all_discount, all_rating, all_avel, all_price]
-
-    return listdata
+print(listdata) 
 
 
 
-@app.route('/search/<query>', methods=["GET", "POST"])
-def search(query):
+# @app.route('/search/<query>', methods=["GET", "POST"])
+# def search(query):
 
-    search_query = database.query(query)
+#     search_query = database.query(query)
 
-    search_img = []
-    search_link = []
-    for y in search_query:
+#     search_img = []
+#     search_link = []
+#     for y in search_query:
 
-        search_product_img = y[10]
-        search_product_page_link = y[2]
+#         search_product_img = y[10]
+#         search_product_page_link = y[2]
 
-        search_img.append(search_product_img)
-        search_link.append(search_product_page_link)
+#         search_img.append(search_product_img)
+#         search_link.append(search_product_page_link)
 
-    search_data = [search_img, search_link]
-    print(search_data)
+#     search_data = [search_img, search_link]
+#     print(search_data)
 
-    return render_template('search.html', search_query = search_data)
-
-
-
-def product_page_data():
-    message = database.data()
-
-    img = []
-    link = []
-    for x in message:
-
-        product_img = x[12]
-        product_page_link = x[4]
-
-        img.append(product_img)
-        link.append(product_page_link)
-
-    p_page_data = [img, link]
-
-    print(product_img)
-
-    return p_page_data
+#     return render_template('search.html', search_query = search_data)
 
 
-@app.route('/output/<p_id>', methods=["GET", "POST"])
-def alldata(p_id):
 
-    main_fun_data = main(p_id)
-    product_page_data_in = product_page_data()
+# def product_page_data():
+#     message = database.data()
 
-    return render_template('product_page.html', send_main_fun_data=main_fun_data, product_page_data_send=product_page_data_in)
+#     img = []
+#     link = []
+#     for x in message:
+
+#         product_img = x[12]
+#         product_page_link = x[4]
+
+#         img.append(product_img)
+#         link.append(product_page_link)
+
+#     p_page_data = [img, link]
+
+#     print(product_img)
+
+#     return p_page_data
+
+
+# @app.route('/output/<p_id>', methods=["GET", "POST"])
+# def alldata(p_id):
+
+#     main_fun_data = main(p_id)
+#     product_page_data_in = product_page_data()
+
+#     return render_template('product_page.html', send_main_fun_data=main_fun_data, product_page_data_send=product_page_data_in)
 
 
 # tr1 = threading.Thread(target=main)
@@ -246,4 +245,4 @@ def alldata(p_id):
 # tr1.join()
 # tr2.join()
 
-app.run()
+# app.run()

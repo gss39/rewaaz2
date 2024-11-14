@@ -1401,7 +1401,7 @@ body::-webkit-scrollbar-thumb:hover {
   z-index: 1;
 }
 
-.product-grid .product-img.hover {
+/* .product-grid .product-img.hover {
   position: absolute;
   top: 0;
   left: 0;
@@ -1411,15 +1411,15 @@ body::-webkit-scrollbar-thumb:hover {
 
 .product-grid .showcase:hover .product-img.hover {
   opacity: 1;
-}
+} */
 
-.product-grid .showcase:hover .product-img.default {
+/* .product-grid .showcase:hover .product-img.default {
   opacity: 0;
-}
+} */
 
-.product-grid .showcase:hover .product-img {
+/* .product-grid .showcase:hover .product-img {
   transform: scale(1.1);
-}
+} */
 
 .product-grid .showcase-badge {
   position: absolute;
