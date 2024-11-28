@@ -33,7 +33,7 @@ include('desh_header.php');
           <input type='text' class='form-control' required name='product_id'>
         </div>
 
-        <div class='col-md-6'>
+        <!-- <div class='col-md-6'>
           <label for='title' class='form-label'>Title :</label>
           <input type='text' class='form-control' required name='title'>
         </div>
@@ -56,7 +56,7 @@ include('desh_header.php');
         <div class='col-md-6'>
           <label for='rating' class='form-label'>rating :</label>
           <input type='text' class='form-control' required name='rating'>
-        </div>
+        </div> -->
 
         <div class='col-md-6'>
           <label for='seller' class='form-label'>Seller :</label>

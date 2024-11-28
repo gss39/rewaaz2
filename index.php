@@ -43,10 +43,30 @@ error_reporting(0);
 
                         <div class="showcase-container">
 
+
+
+                        <?php
+
+
+$query = "SELECT * FROM `products` ORDER BY RAND() LIMIT 5";
+
+
+// FETCHING DATA FROM DATABASE 
+$result = $conn->query($query);
+
+if ($result->num_rows > 0) {
+    // OUTPUT DATA OF EACH ROW 
+    while ($row = $result->fetch_assoc()) {
+
+        $catg = strtoupper($row["catg"]);
+
+        ?>
+
+
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0CD424777 .jpg"
+                                    <img src="http://localhost/rewaaz2/images/<?php echo $row["image"]?>"
                                         alt="baby fabric shoes" width="75" height="100" class="showcase-img">
                                 </a>
 
@@ -79,121 +99,17 @@ error_reporting(0);
 
                             </div>
 
+ <?Php
 
-                            <div class="showcase">
+                            }
+                        } else {
+                            echo "0 results";
+                        }
 
-                                <a href="#" class="showcase-img-box">
-                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0B4JLTR93.jpg"
-                                        alt="men's hoodies t-shirt" class="showcase-img" width="75" height="90">
-                                </a>
 
-                                <div class="showcase-content">
 
-                                    <a href="#">
-                                        <h4 class="showcase-title">men's hoodies t-shirt</h4>
-                                    </a>
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star-half-outline"></ion-icon>
-                                    </div>
-
-                                    <div class="price-box">
-                                        <del>$17.00</del>
-                                        <p class="price">$7.00</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="showcase">
-
-                                <a href="#" class="showcase-img-box">
-                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0C5SXFRTK.jpg" alt="girls t-shirt"
-                                        class="showcase-img" width="75" height="90">
-                                </a>
-
-                                <div class="showcase-content">
-
-                                    <a href="#">
-                                        <h4 class="showcase-title">girls t-shirt</h4>
-                                    </a>
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star-half-outline"></ion-icon>
-                                    </div>
-
-                                    <div class="price-box">
-                                        <del>$5.00</del>
-                                        <p class="price">$3.00</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="showcase">
-
-                                <a href="#" class="showcase-img-box">
-                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0C4FD3N7R.jpg"
-                                        alt="woolen hat for men" class="showcase-img" width="75" height="90">
-                                </a>
-
-                                <div class="showcase-content">
-
-                                    <a href="#">
-                                        <h4 class="showcase-title">woolen hat for men</h4>
-                                    </a>
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-
-                                    <div class="price-box">
-                                        <del>$15.00</del>
-                                        <p class="price">$12.00</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="showcase">
-
-                                <a href="#" class="showcase-img-box">
-                                    <img src="https://rewaaz2images.s3.amazonaws.com/B0BN1VNV12.jpg"
-                                        alt="woolen hat for men" class="showcase-img" width="75" height="90">
-                                </a>
-
-                                <div class="showcase-content">
-
-                                    <a href="#">
-                                        <h4 class="showcase-title">woolen hat for men</h4>
-                                    </a>
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-
-                                    <div class="price-box">
-                                        <del>$15.00</del>
-                                        <p class="price">$12.00</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
+                        ?>
+                           
 
 
                         </div>
@@ -440,7 +356,7 @@ error_reporting(0);
                         // 
                         // SQL QUERY 
                         // $query = "SELECT * FROM `products` WHERE title LIKE '%{$search}%' LIMIT $limit  OFFSET $offset ";
-                        $query = "SELECT * FROM `products` WHERE title LIKE '%{$search}%' AND title NOT IN ('NA') LIMIT $limit  OFFSET $offset";
+                        $query = "SELECT * FROM `products` WHERE  title  LIKE '%{$search}%' AND title NOT IN ('NA') ORDER BY RAND() LIMIT $limit  OFFSET $offset";
 
                         // FETCHING DATA FROM DATABASE 
                         $result = $conn->query($query);
@@ -462,7 +378,7 @@ error_reporting(0);
                                     <div class="showcase-banner">
 
                                         <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"><img
-                                                src="https://rewaaz2images.s3.amazonaws.com/<?php echo $row["image"] ?>"
+                                                src="http://localhost/rewaaz2/images/<?php echo $row["image"]?>"
                                                 alt="Mens Winter Leathers Jackets" width="300" loading="lazy" id="display_image"
                                                 class="product-img default">
                                         </a>

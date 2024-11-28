@@ -261,7 +261,7 @@ include("connection.php");
 
 
                                     <div class="showcase-banner">
-                                        <video src="https://rewaazvideo2.s3.amazonaws.com/<?php echo $row["video"]?>" width="300px"
+                                        <video src="http://localhost/rewaaz2/videos/<?php echo $row["video"]?>" width="300px"
                                             height="510px" controls alt="shampoo, conditioner & facewash packs"
                                             class="showcase-img"></video>
                                     </div>
@@ -530,7 +530,7 @@ include("connection.php");
                         <?php
 
 
-                        $query = "SELECT * FROM `products` ";
+                        $query = "SELECT * FROM `products`";
 
 
                         // FETCHING DATA FROM DATABASE 
@@ -549,10 +549,9 @@ include("connection.php");
                                     <div class="showcase-banner">
 
                                         <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"><img
-                                                src="https://rewaaz2images.s3.amazonaws.com/<?php echo $row["image"]?>"
+                                                src="http://localhost/rewaaz2/images/<?php echo $row["image"]?>"
                                                 alt="Mens Winter Leathers Jackets" width="300" class="product-img default">
-                                            <img src="https://rewaaz2images.s3.amazonaws.com/<?php echo $row["image"]?>"
-                                                alt="Mens Winter Leathers Jackets" width="300" class="product-img hover"></a>
+                                            </a>
 
                                         <p class="showcase-badge"><?php echo $row["discount"] ?>%</p>
 
