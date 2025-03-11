@@ -9,9 +9,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rewaaz - Best Brands & Best Quality & Best Price</title>
+  
 
-
+  
   <!-- ------------------------------------------------------------------------------- -->
   <meta name="google-adsense-account" content="ca-pub-1512397286671544">
 
@@ -395,12 +395,12 @@
           </li>
 
           <li class="menu-category">
-            <a href="#" class="menu-title">Kurta sets</a>
+            <a href="#" class="menu-title">Saree</a>
 
             
           </li>
           <li class="menu-category">
-            <a href="#" class="menu-title">Saree</a>
+            <a href="Saree.php" class="menu-title">Bollywood Saree</a>
 
             <!-- <ul class="dropdown-list">
 
@@ -423,9 +423,10 @@
             </ul> -->
           </li>
 
-          <li class="menu-category">
-            <a href="#" class="menu-title">Lahnga</a>
+          <!-- <li class="menu-category">
+            <a href="#" class="menu-title">Lahnga</a> -->
 
+            <!-- <ul class="dropdown-list"> -->
             <!-- <ul class="dropdown-list"> -->
 
               <!-- <li class="dropdown-item">
@@ -435,12 +436,12 @@
             
 
             <!-- </ul> -->
-          </li>
+          <!-- </li> -->
 
 
 
           <li class="menu-category">
-            <a href="#" class="menu-title">Anarkali sets</a>
+            <a href="#" class="menu-title">New Saree</a>
 
             <!-- <ul class="dropdown-list">
 
@@ -458,14 +459,15 @@
 
 
           <li class="menu-category">
-            <a href="#" class="menu-title">Dress</a>
+            <a href="#" class="menu-title">
+            Tranding Saree</a>
 
 
           </li>
 
           
           <li class="menu-category">
-            <a href="#" class="menu-title">Co-ord-sets</a>
+            <a href="#" class="menu-title">Best Seller</a>
 
 
           </li>
@@ -531,7 +533,7 @@
         </li>
 
         <li class="menu-category">
-          <a href="catg_page.php?catg=Kurta sets" class="menu-title">Kurta sets</a>
+          <a href="catg_page.php?catg=Kurta sets" class="menu-title">Bollywood Saree</a>
         </li>
 
         <li class="menu-category">

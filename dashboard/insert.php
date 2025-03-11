@@ -65,7 +65,12 @@ include('desh_header.php');
             <option>Amazon</option>
             <option>Flipkert</option>
             <option>Meesho</option>
+            
             <option>Myntra</option>
+            <option>Thenmozhidesigns</option>
+            <option>Style_Jaipur</option>
+            <option>blocks_and_prints_online</option>
+            <option>Tanhai</option>
 
           </select>
         </div>
@@ -81,7 +86,8 @@ include('desh_header.php');
             <option>Lahnga</option>
             <option>Dress</option>
             <option>Gowns</option>
-            <option>Anarkali salwar suit</option>
+            <option>Anarkali_Sets</option>
+            <option>Co-Ord-Sets</option>
 
           </select>
         </div>
@@ -99,6 +105,11 @@ include('desh_header.php');
         <div class='col-md-12'>
           <label for='product_id' class='form-label'>Product link :</label>
           <input type='text' class='form-control' required name='product_link'>
+        </div>
+
+        <div class='col-md-12'>
+          <label for='keywords' class='form-label'>Keywords :</label>
+          <input type='text' class='form-control'  name='keywords'>
         </div>
 
         <div class='col-12'>

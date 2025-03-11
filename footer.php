@@ -184,7 +184,7 @@
 
 
 
-  <div class="footer-nav">
+  <!-- <div class="footer-nav">
 
     <div class="container">
 
@@ -375,7 +375,7 @@
 
     </div>
 
-  </div>
+  </div> -->
 
   <div class="footer-bottom">
 
@@ -384,7 +384,7 @@
       <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
 
       <p class="copyright">
-        Copyright &copy; <a href="#">Anon</a> all rights reserved.
+        Copyright &copy; <a href="#">Rewaaz</a> all rights reserved.
       </p>
 
     </div>

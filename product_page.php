@@ -255,15 +255,15 @@ include("connection.php");
 
 
                                 ?>
-
+                                <title><?php echo $row["title_keywords"] ?></title>
 
                                 <div class="showcase">
 
 
                                     <div class="showcase-banner">
-                                        <video src="http://localhost/rewaaz2/videos/<?php echo $row["video"]?>" width="300px"
-                                            height="510px" controls alt="shampoo, conditioner & facewash packs"
-                                            class="showcase-img"></video>
+                                        <video src="https://s3.eu-north-1.amazonaws.com/rewaaz.videos/<?php echo $row["video"] ?>" width="300px"
+                                            height="510px" autoplay="autoplay" controls
+                                            alt="shampoo, conditioner & facewash packs" class="showcase-img"></video>
                                     </div>
 
 
@@ -318,8 +318,25 @@ include("connection.php");
                                             </div>
                                             <div
                                                 style=" border: 1px solid green; font-size: 13px; vertical-align:center; padding: 5px;  border-radius: 5px; color:white; color: black; text-align: center;  width: 90px;  margin-top: 0px; ">
+
+
+
                                                 <b>
-                                                    -<?php echo $row["discount"] ?>% OFF
+
+                                                    <?php
+
+                                                    if ($row["discount"] != null && $row["discount"] != 'NA') {
+
+                                                        echo '-' . $row["discount"] . ' OFF';
+                                                    } else {
+
+                                                        echo 'Fresh';
+
+                                                    }
+
+
+                                                    ?>
+
                                                 </b>
                                             </div>
 
@@ -436,15 +453,15 @@ include("connection.php");
 
                                                 $catg = strtoupper($row["catg"]);
 
-                                                
+
 
 
                                                 ?>
 
 
-                                                <button type="button" style="display:inline; margin-left:10px;"
-                                                    class="add-cart-btn"> <a style=" color: white; " href="<?php echo $row["p_link"] ?>">
-                                                    Buy Now</a></button>
+                                                <button type="button" style="display:inline; margin-left:10px;" class="add-cart-btn"> <a
+                                                        style=" color: white; " href="<?php echo $row["p_link"] ?>">
+                                                        Buy Now</a></button>
 
                                                 <?php
                                             }
@@ -465,22 +482,42 @@ include("connection.php");
 
                                             <div style="white-space: nowrap; overflow: scroll; scrollbar-width: none " id="">
 
-                                                <img style="margin-top:10px; padding-left:10px; border-radius: 5px; display:inline;"
-                                                    src="https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/l/g/m/s-jp001-pink-lhariya-kurta-areeh-original-imagqr82brhcrhxr.jpeg?q=70"
-                                                    width="110px" height="140px"></img>
-                                                <img style="margin-top:10px; padding-left:10px; border-radius: 5px; display:inline;"
-                                                    src="https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/a/k/f/l-na-1024-mintmarie-original-imagz4qqfnmhchux.jpeg?q=70"
-                                                    width="110px" height="140px"></img>
-                                                <img style="margin-top:10px; padding-left:10px; display:inline;"
-                                                    src="https://rukminim2.flixcart.com/image/612/612/kzzw5u80/kurta/t/n/x/xxl-shivani-purple-xxl-fantasy-fab-original-imagbvzkm5tfyryh.jpeg?q=70"
-                                                    width="110px" height="140px"></img>
-                                                <img style="margin-top:10px; padding-left:10px; display:inline;"
-                                                    src="https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/t/9/z/xs-pw333-purshottam-wala-original-imagm8f2vfsgsdej.jpeg?q=70"
-                                                    width="110px" height="140px"></img>
-                                                <img style="margin-top:10px; padding-left:10px; border-radius: 5px; display:inline;"
-                                                    src="https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/l/g/m/s-jp001-pink-lhariya-kurta-areeh-original-imagqr82brhcrhxr.jpeg?q=70"
-                                                    width="110px" height="140px"></img>
 
+
+                                                <?php
+
+
+                                                $query = "SELECT * FROM `products` WHERE catg = 'Saree' ORDER BY RAND() LIMIT 5";
+
+
+                                                // FETCHING DATA FROM DATABASE 
+                                                $result = $conn->query($query);
+
+                                                if ($result->num_rows > 0) {
+                                                    // OUTPUT DATA OF EACH ROW 
+                                                    while ($row = $result->fetch_assoc()) {
+
+                                                        $catg = strtoupper($row["catg"]);
+
+                                                        ?>
+
+
+
+
+                                                        <img style="margin-top:10px; padding-left:10px; border-radius: 5px; display:inline;"
+                                                            src="http://localhost/rewaaz2/images/<?php echo $row["image"]?>"
+                                                            width="110px" height="140px"></img>
+
+                                                        <?Php
+
+                                                    }
+                                                } else {
+                                                    echo "0 results";
+                                                }
+
+
+
+                                                ?>
 
                                             </div>
 
@@ -530,7 +567,7 @@ include("connection.php");
                         <?php
 
 
-                        $query = "SELECT * FROM `products`";
+                        $query = "SELECT * FROM `products` WHERE catg = 'Saree' LIMIT 20";
 
 
                         // FETCHING DATA FROM DATABASE 
@@ -549,9 +586,9 @@ include("connection.php");
                                     <div class="showcase-banner">
 
                                         <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"><img
-                                                src="http://localhost/rewaaz2/images/<?php echo $row["image"]?>"
+                                                src="http://localhost/rewaaz2/images/<?php echo $row["image"] ?>"
                                                 alt="Mens Winter Leathers Jackets" width="300" class="product-img default">
-                                            </a>
+                                        </a>
 
                                         <p class="showcase-badge"><?php echo $row["discount"] ?>%</p>
 

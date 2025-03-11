@@ -5,6 +5,9 @@ include ('connection2.php');
 $product_id = $_POST['product_id'];
 $seller = $_POST['seller'];
 $catg = $_POST['catg'];
+$keywords = $_POST['keywords'];
+
+
 
 // $title = $_POST['title'];
 // $price  = $_POST['price'];
@@ -12,16 +15,17 @@ $catg = $_POST['catg'];
 // $discount  = $_POST['discount'];
 $myimage  = $_POST['myimage'];
 $myvideo  = $_POST['myvideo'];
+
 // $mrp = $_POST['mrp'];
 
 
 $product_link = $_POST['product_link'];
 
 
-$product_url = "https://www.amazon.in/dp/".$product_id."";
 
 
-        $sql = "INSERT INTO `products`(`product_id`, `seller`, `catg`,`image`, `video`, `p_link`,`product_url`) VALUES ('$product_id','$seller','$catg','$myimage','$myvideo','$product_link','$product_url')";
+
+        $sql = "INSERT INTO `products`(`product_id`, `seller`, `catg`,`image`, `video`, `p_link`,`title_keywords`) VALUES ('$product_id','$seller','$catg','$myimage','$myvideo','$product_link','$keywords')";
 
         if ($conn->query($sql) == TRUE) {
 

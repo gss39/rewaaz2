@@ -10,7 +10,7 @@ error_reporting(0);
 
 
 ?>
-
+<title>compure products for best price...</title>
 <!--
 - MAIN
 -->
@@ -48,7 +48,7 @@ error_reporting(0);
                         <?php
 
 
-$query = "SELECT * FROM `products` ORDER BY RAND() LIMIT 5";
+$query = "SELECT * FROM `products`s ORDER BY RAND() LIMIT 5";
 
 
 // FETCHING DATA FROM DATABASE 
@@ -73,7 +73,7 @@ if ($result->num_rows > 0) {
                                 <div class="showcase-content">
 
                                     <a href="#">
-                                        <h4 class="showcase-title">baby fabric shoes</h4>
+                                        <h4 class="showcase-title"><?php echo $row["title"]?></h4>
                                     </a>
 
                                     <div class="showcase-rating">
@@ -85,13 +85,29 @@ if ($result->num_rows > 0) {
                                     </div>
 
                                     <div class="price-box">
-                                        <del>$5.00</del>
-                                        <p class="price">$4.00</p>
+                                        <del>&#8377;<?php echo $row["mrp"]?></del>
+                                        <p class="price">&#8377;<?php echo $row["price"]?></p>
 
                                     </div>
                                     <div class="price-box">
+                                        <?php
 
-                                        <p class="price">50% OFF</p>
+                                    if($row["discount"] != null && $row["discount"] != "NA" ){
+
+                                         echo '<p class="price">'. $row["discount"].'% OFF</p>';
+
+                                        }
+
+                                        else{
+
+
+                                            echo '<p class="price">Fresh</p>';
+                                           
+
+                                        }
+                                        ?>
+
+                                        
 
                                     </div>
 
@@ -356,7 +372,7 @@ if ($result->num_rows > 0) {
                         // 
                         // SQL QUERY 
                         // $query = "SELECT * FROM `products` WHERE title LIKE '%{$search}%' LIMIT $limit  OFFSET $offset ";
-                        $query = "SELECT * FROM `products` WHERE  title  LIKE '%{$search}%' AND title NOT IN ('NA') ORDER BY RAND() LIMIT $limit  OFFSET $offset";
+                        $query = "SELECT * FROM `products` WHERE catg = 'Saree' AND  title  LIKE '%{$search}%' AND title NOT IN ('NA') ORDER BY RAND() LIMIT $limit  OFFSET $offset";
 
                         // FETCHING DATA FROM DATABASE 
                         $result = $conn->query($query);
@@ -378,12 +394,23 @@ if ($result->num_rows > 0) {
                                     <div class="showcase-banner">
 
                                         <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"><img
-                                                src="http://localhost/rewaaz2/images/<?php echo $row["image"]?>"
+                                                src="https://s3.eu-north-1.amazonaws.com/rewaaz.images/images/<?php echo $row["image"]?>"
                                                 alt="Mens Winter Leathers Jackets" width="300" loading="lazy" id="display_image"
                                                 class="product-img default">
                                         </a>
 
-                                        <p class="showcase-badge">-<?php echo $row["discount"]?>%</p>
+                                       
+                                         <?php
+
+                                        if($row["discount"] != null && $row["discount"] != "NA" ){
+
+                                         echo '<p class="showcase-badge">'. $row["discount"].'</p>';
+
+                                        }
+
+                                        ?> 
+
+                                        
 
 
                                         <div class="showcase-actions">
