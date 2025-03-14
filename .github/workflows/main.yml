@@ -1,7 +1,8 @@
 on:
   push:
-    branches:
-       main
+   branches:
+      main
+name: Deploy website on push
 jobs:
   web-deploy:
     name: Deploy
@@ -15,6 +16,4 @@ jobs:
       with:
         username: rewaaz2@rewaaz.in
         password: nfjX~l!U3eK[
-        server: ftp.rewaaz.in
-        port: 21
-        
+        server: ftp.rewaaz.in  
