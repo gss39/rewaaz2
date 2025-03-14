@@ -13,8 +13,8 @@ jobs:
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        server: ${{ secrets.FTP_SERVER }}
-        port: ${{ secrets.FTP_PORT }}
+        username: rewaaz2@rewaaz.in
+        password: nfjX~l!U3eK[
+        server: ftp.rewaaz.in
+        port: 21
         
