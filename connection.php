@@ -1,15 +1,15 @@
 <?php
 
 
-// $servername = "localhost";
-// $username = "rewaaz123";
-// $password = "vd]UzH;RKl&(";
-// $databasename = "mydatabase";
-
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "rewaaz123";
+$password = "vd]UzH;RKl&(";
 $databasename = "mydatabase";
+
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $databasename = "mydatabase";
 
 
 
