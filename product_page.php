@@ -505,7 +505,7 @@ include("connection.php");
 
 
                                                         <img style="margin-top:10px; padding-left:10px; border-radius: 5px; display:inline;"
-                                                            src="http://localhost/rewaaz2/images/<?php echo $row["image"]?>"
+                                                            src="https://s3.eu-north-1.amazonaws.com/rewaaz.images/images/<?php echo $row["image"]?>"
                                                             width="110px" height="140px"></img>
 
                                                         <?Php
@@ -586,7 +586,7 @@ include("connection.php");
                                     <div class="showcase-banner">
 
                                         <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"><img
-                                                src="http://localhost/rewaaz2/images/<?php echo $row["image"] ?>"
+                                                src="https://s3.eu-north-1.amazonaws.com/rewaaz.images/images/<?php echo $row["image"]?>"
                                                 alt="Mens Winter Leathers Jackets" width="300" class="product-img default">
                                         </a>
 
