@@ -66,7 +66,7 @@ if ($result->num_rows > 0) {
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="http://localhost/rewaaz2/images/<?php echo $row["image"]?>"
+                                    <img src="https://s3.eu-north-1.amazonaws.com/rewaaz.images/images/<?php echo $row["image"]?>"
                                         alt="baby fabric shoes" width="75" height="100" class="showcase-img">
                                 </a>
 
