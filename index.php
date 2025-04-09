@@ -48,7 +48,7 @@ error_reporting(0);
                         <?php
 
 
-$query = "SELECT * FROM `products`s ORDER BY RAND() LIMIT 5";
+$query = "SELECT * FROM `products`   ORDER BY RAND() LIMIT 5";
 
 
 // FETCHING DATA FROM DATABASE 
@@ -66,7 +66,7 @@ if ($result->num_rows > 0) {
                             <div class="showcase">
 
                                 <a href="#" class="showcase-img-box">
-                                    <img src="https://s3.eu-north-1.amazonaws.com/rewaaz.images/images/<?php echo $row["image"]?>"
+                                    <img src="https://s3.eu-north-1.amazonaws.com/rewaaz.image/<?php echo $row["image"]?>"
                                         alt="baby fabric shoes" width="75" height="100" class="showcase-img">
                                 </a>
 
@@ -94,7 +94,7 @@ if ($result->num_rows > 0) {
 
                                     if($row["discount"] != null && $row["discount"] != "NA" ){
 
-                                         echo '<p class="price">'. $row["discount"].'% OFF</p>';
+                                         echo '<p class="price">'. $row["discount"].' OFF</p>';
 
                                         }
 
@@ -372,7 +372,7 @@ if ($result->num_rows > 0) {
                         // 
                         // SQL QUERY 
                         // $query = "SELECT * FROM `products` WHERE title LIKE '%{$search}%' LIMIT $limit  OFFSET $offset ";
-                        $query = "SELECT * FROM `products` WHERE catg = 'Saree' AND  title  LIKE '%{$search}%' AND title NOT IN ('NA') ORDER BY RAND() LIMIT $limit  OFFSET $offset";
+                        $query = "SELECT * FROM `products` WHERE seller = 'Amazon'   AND  title  LIKE '%{$search}%' AND title NOT IN ('NA') ORDER BY RAND() LIMIT $limit  OFFSET $offset";
 
                         // FETCHING DATA FROM DATABASE 
                         $result = $conn->query($query);
@@ -394,7 +394,7 @@ if ($result->num_rows > 0) {
                                     <div class="showcase-banner">
 
                                         <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"><img
-                                                src="https://s3.eu-north-1.amazonaws.com/rewaaz.images/images/<?php echo $row["image"]?>"
+                                                src="https://s3.eu-north-1.amazonaws.com/rewaaz.image/<?php echo $row["image"]?>"
                                                 alt="Mens Winter Leathers Jackets" width="300" loading="lazy" id="display_image"
                                                 class="product-img default">
                                         </a>

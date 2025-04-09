@@ -12,8 +12,6 @@ $databasename = "mydatabase";
 // $databasename = "mydatabase";
 
 
-
-
 // CREATE CONNECTION 
 $conn = new mysqli(
   $servername,

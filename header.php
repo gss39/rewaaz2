@@ -395,12 +395,12 @@
           </li>
 
           <li class="menu-category">
-            <a href="#" class="menu-title">Saree</a>
+            <a href="Saree.php" class="menu-title">Saree</a>
 
             
           </li>
           <li class="menu-category">
-            <a href="Saree.php" class="menu-title">Bollywood Saree</a>
+            <a href="Kurta _sets.php" class="menu-title">Kurta Sets</a>
 
             <!-- <ul class="dropdown-list">
 
@@ -441,7 +441,7 @@
 
 
           <li class="menu-category">
-            <a href="#" class="menu-title">New Saree</a>
+            <a href="Anarkali_Sets.php" class="menu-title">Anarkali Sets</a>
 
             <!-- <ul class="dropdown-list">
 

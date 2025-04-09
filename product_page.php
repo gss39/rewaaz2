@@ -49,158 +49,85 @@ include("connection.php");
 
                     <div class="showcase-container">
 
-                        <div class="showcase">
+                        <?php
 
-                            <a href="#" class="showcase-img-box">
-                                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/l/g/m/s-jp001-pink-lhariya-kurta-areeh-original-imagqr82brhcrhxr.jpeg?q=70"
-                                    alt="baby fabric shoes" width="75" height="90" class="showcase-img">
-                            </a>
 
-                            <div class="showcase-content">
+                        $query = "SELECT * FROM `products`   ORDER BY RAND() LIMIT 5";
 
-                                <a href="#">
-                                    <h4 class="showcase-title">baby fabric shoes</h4>
-                                </a>
 
-                                <div class="showcase-rating">
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
+                        // FETCHING DATA FROM DATABASE 
+                        $result = $conn->query($query);
+
+                        if ($result->num_rows > 0) {
+                            // OUTPUT DATA OF EACH ROW 
+                            while ($row = $result->fetch_assoc()) {
+
+                                $catg = strtoupper($row["catg"]);
+
+                                ?>
+
+
+                                <div class="showcase">
+
+                                    <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"
+                                        class="showcase-img-box">
+                                        <img src="https://s3.eu-north-1.amazonaws.com/rewaaz.image/<?php echo $row["image"] ?>"
+                                            alt="baby fabric shoes" width="75" height="100" class="showcase-img">
+                                    </a>
+
+                                    <div class="showcase-content">
+
+                                        <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>">
+                                            <h4 class="showcase-title"><?php echo $row["title"] ?></h4>
+                                        </a>
+
+                                        <div class="showcase-rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <del>&#8377;<?php echo $row["mrp"] ?></del>
+                                            <p class="price">&#8377;<?php echo $row["price"] ?></p>
+
+                                        </div>
+                                        <div class="price-box">
+                                            <?php
+
+                                            if ($row["discount"] != null && $row["discount"] != "NA") {
+
+                                                echo '<p class="price">' . $row["discount"] . ' OFF</p>';
+
+                                            } else {
+
+
+                                                echo '<p class="price">Fresh</p>';
+
+
+                                            }
+                                            ?>
+
+
+
+                                        </div>
+
+                                    </div>
+
                                 </div>
 
-                                <div class="price-box">
-                                    <del>$5.00</del>
-                                    <p class="price">$4.00</p>
+                                <?Php
 
-                                </div>
-                                <div class="price-box">
-
-                                    <p class="price">50% OFF</p>
-
-                                </div>
-
-                            </div>
-
-                        </div>
+                            }
+                        } else {
+                            echo "0 results";
+                        }
 
 
-                        <div class="showcase">
 
-                            <a href="#" class="showcase-img-box">
-                                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/a/k/f/l-na-1024-mintmarie-original-imagz4qqfnmhchux.jpeg?q=70"
-                                    alt="men's hoodies t-shirt" class="showcase-img" width="75" height="90">
-                            </a>
-
-                            <div class="showcase-content">
-
-                                <a href="#">
-                                    <h4 class="showcase-title">men's hoodies t-shirt</h4>
-                                </a>
-                                <div class="showcase-rating">
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star-half-outline"></ion-icon>
-                                </div>
-
-                                <div class="price-box">
-                                    <del>$17.00</del>
-                                    <p class="price">$7.00</p>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="showcase">
-
-                            <a href="#" class="showcase-img-box">
-                                <img src="https://rukminim2.flixcart.com/image/612/612/kzzw5u80/kurta/t/n/x/xxl-shivani-purple-xxl-fantasy-fab-original-imagbvzkm5tfyryh.jpeg?q=70"
-                                    alt="girls t-shirt" class="showcase-img" width="75" height="90">
-                            </a>
-
-                            <div class="showcase-content">
-
-                                <a href="#">
-                                    <h4 class="showcase-title">girls t-shirt</h4>
-                                </a>
-                                <div class="showcase-rating">
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star-half-outline"></ion-icon>
-                                </div>
-
-                                <div class="price-box">
-                                    <del>$5.00</del>
-                                    <p class="price">$3.00</p>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="showcase">
-
-                            <a href="#" class="showcase-img-box">
-                                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/t/9/z/xs-pw333-purshottam-wala-original-imagm8f2vfsgsdej.jpeg?q=70"
-                                    alt="woolen hat for men" class="showcase-img" width="75" height="90">
-                            </a>
-
-                            <div class="showcase-content">
-
-                                <a href="#">
-                                    <h4 class="showcase-title">woolen hat for men</h4>
-                                </a>
-                                <div class="showcase-rating">
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                </div>
-
-                                <div class="price-box">
-                                    <del>$15.00</del>
-                                    <p class="price">$12.00</p>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="showcase">
-
-                            <a href="#" class="showcase-img-box">
-                                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/l/g/m/s-jp001-pink-lhariya-kurta-areeh-original-imagqr82brhcrhxr.jpeg?q=70"
-                                    alt="woolen hat for men" class="showcase-img" width="75" height="90">
-                            </a>
-
-                            <div class="showcase-content">
-
-                                <a href="#">
-                                    <h4 class="showcase-title">woolen hat for men</h4>
-                                </a>
-                                <div class="showcase-rating">
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                </div>
-
-                                <div class="price-box">
-                                    <del>$15.00</del>
-                                    <p class="price">$12.00</p>
-                                </div>
-
-                            </div>
-
-                        </div>
-
+                        ?>
 
                     </div>
 
@@ -261,8 +188,9 @@ include("connection.php");
 
 
                                     <div class="showcase-banner">
-                                        <video src="https://s3.eu-north-1.amazonaws.com/rewaaz.videos/<?php echo $row["video"] ?>" width="300px"
-                                            height="510px" autoplay="autoplay" controls
+                                        <video
+                                            src="https://s3.eu-north-1.amazonaws.com/rewaaz.video/<?php echo $row["video"] ?>"
+                                            width="300px" height="510px" autoplay="autoplay" controls
                                             alt="shampoo, conditioner & facewash packs" class="showcase-img"></video>
                                     </div>
 
@@ -313,7 +241,7 @@ include("connection.php");
                                                 </p>
 
                                                 <del>
-                                                    &#8377;<?php echo $row["mrp"] ?>
+                                                    <?php echo $row["mrp"] ?>
                                                 </del>
                                             </div>
                                             <div
@@ -327,7 +255,7 @@ include("connection.php");
 
                                                     if ($row["discount"] != null && $row["discount"] != 'NA') {
 
-                                                        echo '-' . $row["discount"] . ' OFF';
+                                                        echo '' . $row["discount"] . ' OFF';
                                                     } else {
 
                                                         echo 'Fresh';
@@ -461,7 +389,7 @@ include("connection.php");
 
                                                 <button type="button" style="display:inline; margin-left:10px;" class="add-cart-btn"> <a
                                                         style=" color: white; " href="<?php echo $row["p_link"] ?>">
-                                                        Buy Now</a></button>
+                                                        Amazon</a></button>
 
                                                 <?php
                                             }
@@ -487,7 +415,7 @@ include("connection.php");
                                                 <?php
 
 
-                                                $query = "SELECT * FROM `products` WHERE catg = 'Saree' ORDER BY RAND() LIMIT 5";
+                                                $query = "SELECT * FROM `products`  ORDER BY RAND() LIMIT 6";
 
 
                                                 // FETCHING DATA FROM DATABASE 
@@ -501,13 +429,16 @@ include("connection.php");
 
                                                         ?>
 
+                                                        <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"
+                                                            style="display:inline;">
 
 
 
-                                                        <img style="margin-top:10px; padding-left:10px; border-radius: 5px; display:inline;"
-                                                            src="https://s3.eu-north-1.amazonaws.com/rewaaz.images/images/<?php echo $row["image"]?>"
-                                                            width="110px" height="140px"></img>
 
+                                                            <img style="margin-top:10px; padding-left:10px; border-radius: 5px; display:inline;"
+                                                                src="https://s3.eu-north-1.amazonaws.com/rewaaz.image/<?php echo $row["image"] ?>"
+                                                                width="110px" height="140px"></img>
+                                                        </a>
                                                         <?Php
 
                                                     }
@@ -567,7 +498,7 @@ include("connection.php");
                         <?php
 
 
-                        $query = "SELECT * FROM `products` WHERE catg = 'Saree' LIMIT 20";
+                        $query = "SELECT * FROM `products` ORDER BY RAND() LIMIT 20 ";
 
 
                         // FETCHING DATA FROM DATABASE 
@@ -586,11 +517,23 @@ include("connection.php");
                                     <div class="showcase-banner">
 
                                         <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"><img
-                                                src="https://s3.eu-north-1.amazonaws.com/rewaaz.images/images/<?php echo $row["image"]?>"
-                                                alt="Mens Winter Leathers Jackets" width="300" class="product-img default">
+                                                src="https://s3.eu-north-1.amazonaws.com/rewaaz.image/<?php echo $row["image"] ?>"
+                                                alt="Mens Winter Leathers Jackets" width="300" loading="lazy" id="display_image"
+                                                class="product-img default">
                                         </a>
 
-                                        <p class="showcase-badge"><?php echo $row["discount"] ?>%</p>
+
+                                        <?php
+
+                                        if ($row["discount"] != null && $row["discount"] != "NA") {
+
+                                            echo '<p class="showcase-badge">' . $row["discount"] . '</p>';
+
+                                        }
+
+                                        ?>
+
+
 
 
                                         <div class="showcase-actions">
