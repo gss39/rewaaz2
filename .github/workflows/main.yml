@@ -1,3 +1,4 @@
+
 on: 
   push:
     branches:
@@ -14,7 +15,6 @@ jobs:
     - name:  Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        username: gurpreet@rewaaz.in
-        password: eYEu$lctEBVj
         server: ftp.rewaaz.in
-       
+        username: admin@rewaaz.in
+        password: u!mcob@PbX%8
