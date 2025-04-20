@@ -10,7 +10,9 @@ error_reporting(0);
 
 
 ?>
-<title>compure products for best price...</title>
+<title>Buy Designer Saree, kurta sets And Anarkali suits Under Budget </title>
+<meta name="description" content="Discover timeless elegance with our curated collection of ethnic wear – from graceful sarees and stylish kurta sets to regal Anarkali suits. Shop traditional and contemporary Indian fashion for every occasion. Fast shipping & secure checkout.">
+
 <!--
 - MAIN
 -->
@@ -393,7 +395,7 @@ if ($result->num_rows > 0) {
 
                                     <div class="showcase-banner">
 
-                                        <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>"><img
+                                        <a href="product_page.php?product_id=<?php echo $row["product_id"] ?>&& title=<?php echo $row["title"] ?>"><img
                                                 src="https://s3.eu-north-1.amazonaws.com/rewaaz.image/<?php echo $row["image"]?>"
                                                 alt="Mens Winter Leathers Jackets" width="300" loading="lazy" id="display_image"
                                                 class="product-img default">
@@ -475,8 +477,7 @@ if ($result->num_rows > 0) {
                     <a href="index.php?page=' . $preious_page . '">&laquo;</a>';
                     for ($i = 1; $i <= $total_page; $i++) {
 
-                        echo '<a href="index.php?page=' . $i . '">' . $i . '</a>';
-
+                      
                     }
                     echo '<a href="index.php?page=' . $next_page . '">&raquo;</a></div>';
                 }

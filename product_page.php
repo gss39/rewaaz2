@@ -10,6 +10,7 @@ include("connection.php");
 ?>
 
 
+
 <!--
       - BANNER
     -->
@@ -158,7 +159,7 @@ include("connection.php");
 
                     <div class="showcase-container">
 
-
+                    <title><?php echo $_GET["product_id"] ?></title>
                         <?php
 
 
@@ -182,7 +183,8 @@ include("connection.php");
 
 
                                 ?>
-                                <title><?php echo $row["title_keywords"] ?></title>
+                                <title><?php echo $row["title"] ?></title>
+                                <meta name="description" content="Discover timeless elegance with our curated collection of ethnic wear – from graceful sarees and stylish kurta sets to regal Anarkali suits. Shop traditional and contemporary Indian fashion for every occasion. Fast shipping & secure checkout.">
 
                                 <div class="showcase">
 
